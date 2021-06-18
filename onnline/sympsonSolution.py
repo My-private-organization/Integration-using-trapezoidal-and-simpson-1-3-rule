@@ -3,11 +3,13 @@ from function import distanceCoveredByRocket
 
 def simpsonFunction(lowerBound, upperBound, division):
 
-    h = (upperBound - lowerBound) / (2 * division)
+    h = (upperBound - lowerBound) / division
+
+    newDivision = int(division / 2)
 
     result = 0
 
-    for i in range(0, division):
+    for i in range(0, newDivision):
 
         c = lowerBound + (2 * h)
 
@@ -21,5 +23,5 @@ def simpsonFunction(lowerBound, upperBound, division):
 
 n = int(input())
 
-for j in range(1, n + 1):
+for j in range(1, n+1):
     print(simpsonFunction(8, 30, 2 * j))
